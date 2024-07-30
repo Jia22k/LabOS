@@ -98,26 +98,26 @@ Using man pages is a great way to learn more about the tools available to you an
 
 Monitoring your system's performance helps ensure it runs smoothly. Here are some tools you can use:
 
-- **top**: Displays a dynamic view of your system's processes. It shows you which processes are using the most CPU, memory, and other resources.
-- **htop**: An interactive version of top with more features, like the ability to scroll through the list of processes and sort by different criteria.
-- **iotop**: Shows I/O usage by processes, helping you identify which processes are using the most disk input/output.
+- **`top`**: Displays a dynamic view of your system's processes. It shows you which processes are using the most CPU, memory, and other resources.
+- **`htop`**: An interactive version of `top` with more features, like the ability to scroll through the list of processes and sort by different criteria.
+- **`iotop`**: Shows I/O usage by processes, helping you identify which processes are using the most disk input/output.
 
 ### What Does `top` Show?
 
 The `top` command provides a real-time view of your system's performance. Here's a breakdown of what you'll see:
 
-- **PID**: Process ID, a unique identifier for each running process.
-- **USER**: The user who owns the process.
-- **PR**: Process priority.
-- **NI**: Nice value, which affects process priority.
-- **VIRT**: Virtual memory used by the process.
-- **RES**: Resident memory (physical memory) used by the process.
-- **SHR**: Shared memory used by the process.
-- **S**: Process status (e.g., running, sleeping).
-- **%CPU**: CPU usage percentage.
-- **%MEM**: Memory usage percentage.
-- **TIME+**: Total CPU time used by the process.
-- **COMMAND**: The command that started the process.
+- **`PID`**: Process ID, a unique identifier for each running process.
+- **`USER`**: The user who owns the process.
+- **`PR`**: Process priority.
+- **`NI`**: Nice value, which affects process priority.
+- **`VIRT`**: Virtual memory used by the process.
+- **`RES`**: Resident memory (physical memory) used by the process.
+- **`SHR`**: Shared memory used by the process.
+- **`S`**: Process status (e.g., running, sleeping).
+- **`%CPU`**: CPU usage percentage.
+- **`%MEM`**: Memory usage percentage.
+- **`TIME+`**: Total CPU time used by the process.
+- **`COMMAND`**: The command that started the process.
 
 ### Exercise: Working with `top` and `htop`
 
