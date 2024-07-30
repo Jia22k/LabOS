@@ -1,35 +1,37 @@
 ---
-title: Home
-layout: home
+layout: default
+title: Welcome
+nav_order: 1
 ---
 
-This is a *bare-minimum* template to create a Jekyll site that uses the [Just the Docs] theme. You can easily set the created site to be published on [GitHub Pages] – the [README] file explains how to do that, along with other details.
+## Welcome to the World of Operating Systems!
+<br>
 
-If [Jekyll] is installed on your computer, you can also build and preview the created site *locally*. This lets you test changes before committing them, and avoids waiting for GitHub Pages.[^1] And you will be able to deploy your local build to a different platform than GitHub Pages.
+Hi! I am Jiana, please call me Jia, one of your TA's for CSDS 338. I am a Junior studying Computer Science and Maths. I will lead/teach some of the Wednesday labs, and my office hours will be on -- in --. Drop by at any time!
 
-More specifically, the created site:
+I've put together some notes in this repository to help you out and will use these during Labs. I will update this as the semester goes on to ensure I go over concepts taught in class the previous week. These notes mostly review what we go over in class and will give you a solid foundation in Linux and C for your assignments. If there's something specific you want to dive into during labs, just swing by my office hours. If enough people are interested, I'm happy to cover it in lab sessions too.
 
-- uses a gem-based approach, i.e. uses a `Gemfile` and loads the `just-the-docs` gem
-- uses the [GitHub Pages / Actions workflow] to build and publish the site on GitHub Pages
+> **Important:**
+> I know Operating Systems can seem pretty intimidating, but trust me—if you give it enough time and effort, it can be super interesting! Plus, knowing your way around OS is a huge asset in both corporate jobs and research. So, don't brush it off; it’s a valuable skill to have.
 
-Other than that, you're free to customize sites that you create with this template, however you like. You can easily change the versions of `just-the-docs` and Jekyll it uses, as well as adding further plugins.
+My main goal is to make this class enjoyable for you. Since this is my first time teaching, I really want your feedback. Shoot me an email if you have any suggestions on how I can improve my teaching style.
 
-[Browse our documentation][Just the Docs] to learn more about how to use this theme.
+---
 
-To get started with creating a site, simply:
+## Some Tips:
 
-1. click "[use this template]" to create a GitHub repository
-2. go to Settings > Pages > Build and deployment > Source, and select GitHub Actions
+- **Attend lectures and labs:** Even if you feel like you study better alone, attending can help you grasp concepts better and keep you up to date with the content instead of cramming before tests.
+  
+- **Use ChatGPT wisely:** Sure, you could put assignments into ChatGPT or another AI, but besides the risk of getting caught, you won't learn or develop any useful skills. Instead, use ChatGPT to help you understand topics. I kept a chat pinned for OS help where I could ask questions and review notes. Just remember to cross-check because ChatGPT can be wrong.
+  
+- **Leverage YouTube:** Visual aids and diagrams can be really helpful. There are great YouTube videos out there, but don't just binge-watch entire playlists like Neso Academy’s Operating Systems. They might cover extra stuff we don’t, and miss things we do.
+  
+- **Understand the concepts:** If something isn’t clear, come to Office Hours, ask questions, **be curious**. Professor loves giving critical thinking questions on midterms that apply your knowledge to real-life contexts, which is a very useful skill.
 
-If you want to maintain your docs in the `docs` directory of an existing project repo, see [Hosting your docs from an existing project repo](https://github.com/just-the-docs/just-the-docs-template/blob/main/README.md#hosting-your-docs-from-an-existing-project-repo) in the template README.
+---
 
-----
+I'll probably add more tips as the semester goes on. You've got this, and I can't wait to help you explore the awesome world of Operating Systems!
 
-[^1]: [It can take up to 10 minutes for changes to your site to publish after you push the changes to GitHub](https://docs.github.com/en/pages/setting-up-a-github-pages-site-with-jekyll/creating-a-github-pages-site-with-jekyll#creating-your-site).
+> ##### Please do come to labs, I will be sad teaching an empty class :'(
 
-[Just the Docs]: https://just-the-docs.github.io/just-the-docs/
-[GitHub Pages]: https://docs.github.com/en/pages
-[README]: https://github.com/just-the-docs/just-the-docs-template/blob/main/README.md
-[Jekyll]: https://jekyllrb.com
-[GitHub Pages / Actions workflow]: https://github.blog/changelog/2022-07-27-github-pages-custom-github-actions-workflows-beta/
-[use this template]: https://github.com/just-the-docs/just-the-docs-template/generate
+Also connect with me on [LinkedIn](https://www.linkedin.com/in/jiana-kambo/). (If you don’t have one, make one and then connect)
