@@ -32,6 +32,6 @@ My main goal is to make this class enjoyable for you. Since this is my first tim
 
 I'll probably add more tips as the semester goes on. You've got this, and I can't wait to help you explore the awesome world of Operating Systems!
 
-> ##### Please do come to labs, I will be sad teaching an empty class :'(
+> #### Please do come to labs, I will be sad teaching an empty class :'(
 
 Also connect with me on [LinkedIn](https://www.linkedin.com/in/jiana-kambo/). (If you don’t have one, make one and then connect)
