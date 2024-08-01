@@ -11,7 +11,6 @@ Hey there! Welcome to a guide on some essential command-line and server basics. 
 ## Contents
 1. [Operating Systems: The Heart of Your Computer](#operating-systems-the-heart-of-your-computer)
 2. [Command Line: Your Computer's Secret Superpower](#command-line-your-computers-secret-superpower)
-   - [Key Commands](#key-commands)
 3. [Server: The Internet's Heavy Lifter](#server-the-internets-heavy-lifter)
 4. [SSH: Your Secure Gateway](#ssh-your-secure-gateway)
    - [Using SSH](#using-ssh)
@@ -22,7 +21,6 @@ Hey there! Welcome to a guide on some essential command-line and server basics. 
 8. [Using Vim in Terminal](#using-vim-in-terminal)
    - [Exercise: Coding a Simple C Program in Vim](#exercise-coding-a-simple-c-program-in-vim)
 9. [Coding in C](#coding-in-c)
-   - [Things to Be Careful With When Coding in C](#things-to-be-careful-with-when-coding-in-c)
 10. [Useful Command List to Know](#useful-command-list-to-know)
    - [Basic File Operations](#basic-file-operations)
    - [Viewing and Editing Files](#viewing-and-editing-files)
@@ -86,6 +84,21 @@ ssh user@example.com
 ```
 
 This command means, "Hey server at example.com, let me in! I'm user."
+
+### SSH into CWRU servers 
+
+This class is centered around the Linux operating system, so there may be times when using Mac or Windows isn't sufficient. To make things easier, you can connect to the **eecslab** Linux server. 
+
+To connect, open your laptop's terminal and type:
+
+```bash
+ssh CASEID@eecslab-#.case.edu
+```
+CASEID@eecslab-#.case.edu: Replace CASEID with your username and # with the server number (1-4).
+Once prompted, enter your password (it won't show for security reasons).
+
+> **Important:**
+> If one server crashes, try another number (1-4).
 
 ## Introduction to Shells
 
