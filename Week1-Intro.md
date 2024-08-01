@@ -18,10 +18,18 @@ Hey there! Welcome to a guide on some essential command-line and server basics. 
 5. [Introduction to Shells](#introduction-to-shells)
 6. [Using and Understanding Man Pages](#using-and-understanding-man-pages)
 7. [System Monitoring and Performance Tuning](#system-monitoring-and-performance-tuning)
+   - [Exercise: Working with `top` and `htop`](#exercise-working-with-top-and-htop)
 8. [Using Vim in Terminal](#using-vim-in-terminal)
+   - [Exercise: Coding a Simple C Program in Vim](#exercise-coding-a-simple-c-program-in-vim)
 9. [Coding in C](#coding-in-c)
+   - [Things to Be Careful With When Coding in C](#things-to-be-careful-with-when-coding-in-c)
 10. [Useful Command List to Know](#useful-command-list-to-know)
+   - [Basic File Operations](#basic-file-operations)
+   - [Viewing and Editing Files](#viewing-and-editing-files)
+   - [Basic Networking Commands](#basic-networking-commands)
+   - [Process Management](#process-management)
 11. [Recap Time!](#recap-time)
+
 
 ## Operating Systems: The Heart of Your Computer
 
@@ -163,6 +171,54 @@ Here are some basic commands to get you started with Vim:
 vim filename  # Open a file in Vim
 ```
 
+### Exercise: Coding a Simple C Program in Vim
+
+Let's create a simple C program that prints "Hello, World!" to the terminal.
+
+1. **Open a Terminal** and create a new file named `hello.c` using Vim:
+   ```bash
+   vim hello.c
+   ```
+
+2. **Enter Insert Mode** by pressing `i`.
+
+3. **Type the Following C Code**:
+   ```c
+   #include <stdio.h>
+
+   int main() {
+       printf("Hello, World!\n");
+       return 0;
+   }
+   ```
+
+4. **Exit Insert Mode** by pressing `Esc`.
+
+5. **Save the File** by typing `:w` and pressing `Enter`.
+
+6. **Quit Vim** by typing `:q` and pressing `Enter`.
+
+### Compiling and Running Your C Program
+
+1. **Compile Your C Program** using `gcc` (GNU Compiler Collection):
+   ```bash
+   gcc hello.c -o a.out
+   ```
+
+   This command compiles `hello.c` and creates an executable named `a.out`. You can change the executable name by specifying a different name after the `-o` option.
+
+2. **Run Your Program**:
+   ```bash
+   ./a.out
+   ```
+
+   You should see the output:
+   ```
+   Hello, World!
+   ```
+
+By practicing this exercise, you'll get comfortable using Vim for editing and writing code, as well as compiling and running C programs in a Unix-like environment. Happy coding!
+
 ## Coding in C
 
 In this class, we will be coding in **C**. C is a powerful, efficient, and widely-used programming language that's particularly popular for system-level programming. It gives you a lot of control over the system resources and memory, which is why it's often used for operating system development.
@@ -232,7 +288,5 @@ In this class, we will be coding in **C**. C is a powerful, efficient, and widel
 - **Coding in C**: Why we're using C, and important considerations for writing C code safely and effectively.
 - **Useful Commands**: Key commands for basic file operations, viewing and editing files, basic networking, and process management.
 
-And that's it! You now know some of the basics to navigate your computer, understand how servers work, and start coding in C. Keep practicing, and you'll be a command-line ninja in no time. Happy exploring!
+And that's it! You now know some of the basics to navigate your computer, understand how servers work, and start coding in C. Keep practicing.
 
-
-Please ensure that the code block is correctly indented and there are no extra characters. Let me know if this helps!
