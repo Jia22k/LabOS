@@ -215,10 +215,10 @@ Let's create a simple C program that prints "Hello, World!" to the terminal.
 
 1. **Compile Your C Program** using `gcc` (GNU Compiler Collection):
    ```bash
-   gcc hello.c -o a.out
+   gcc hello.c
    ```
 
-   This command compiles `hello.c` and creates an executable named `a.out`. You can change the executable name by specifying a different name after the `-o` option.
+   This command compiles `hello.c` and creates an executable named `a.out` by default. You can change the executable name by specifying a different name after the `-o` option. 
 
 2. **Run Your Program**:
    ```bash
