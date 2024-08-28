@@ -77,8 +77,6 @@ ssh username@hostname
 - **`username`**: Your login name on the server.
 - **`hostname`**: The address of the server, like an IP address or a website name.
 
-### Example
-
 ```bash
 ssh user@example.com
 ```
