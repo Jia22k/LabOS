@@ -7,15 +7,12 @@ nav_order: 1
 ## CWRU CSDS-338, Operating Systems Fall 2024
 <br>
 
-Hi! I am Jiana, please call me Jia, one of your TA's for CSDS 338. I am a Junior studying Computer Science and Maths. I will lead/teach some of the Wednesday labs, and my office hours will be on -- in --. Drop by at any time!
-
-I've put together some notes in this repository to help you out and will use these during Labs. I will update this as the semester goes on to ensure I go over concepts taught in class the previous week. These notes mostly review what we go over in class and will give you a solid foundation in Linux and C for your assignments. **It is not a sole compilation of everything taught in class—i.e., do not use this solely to learn; it is meant to refer to, not a comprehensive book or so.** If there's something specific you want to dive into during labs, just swing by my office hours. If enough people are interested, I'm happy to cover it in lab sessions too.
+Hi! We (The OS TA's) have put together some notes in this repository to help you out and will use these during Labs. We will update this as the semester goes on to ensure we go over concepts taught in class the previous week. These notes mostly review what we go over in class and will give you a solid foundation in Linux and C for your assignments. **It is not a sole compilation of everything taught in class—i.e., do not use this solely to learn; it is meant to refer to, not a comprehensive book or so.** If there's something specific you want to dive into during labs, just swing by my office hours. If enough people are interested, we are happy to cover it in lab sessions too.
 
 > **Important:**
-> I know Operating Systems can seem pretty intimidating, but trust me—if you give it enough time and effort, it can be super interesting! Plus, knowing your way around OS is a huge asset in both corporate jobs and research. So, don't brush it off; it’s a valuable skill to have.
+> We know Operating Systems can seem pretty intimidating, but trust me—if you give it enough time and effort, it can be super interesting! Plus, knowing your way around OS is a huge asset in both corporate jobs and research. So, don't brush it off; it’s a valuable skill to have.
 
-My main goal is to make this class enjoyable for you. Since this is my first time teaching, I really want your feedback. Shoot me an email if you have any suggestions on how I can improve my teaching style.
-
+Our main goal is to make this class enjoyable for you. 
 ---
 
 ## Some Tips:
@@ -30,8 +27,6 @@ My main goal is to make this class enjoyable for you. Since this is my first tim
 
 ---
 
-I'll probably add more tips as the semester goes on. You've got this, and I can't wait to help you explore the awesome world of Operating Systems!
+We will probably add more tips as the semester goes on. You've got this, and we can't wait to help you explore the awesome world of Operating Systems!
 
 > #### Please do come to labs, I will be sad teaching an empty class :'(
-
-Also connect with me on [LinkedIn](https://www.linkedin.com/in/jiana-kambo/). (If you don’t have one, make one and then connect)
