@@ -6,30 +6,17 @@ nav_order: 3
 
 ### **CSDS 338 Review Session - Processes and Calls**
 
----
+<br>
 
 ### **Contents**
 
 1. [Processes](#1-processes)  
- 
-
 2. [Process States](#2-process-states)  
-
-
 3. [Waiting Processes](#3-waiting-processes)  
-
-
 4. [Background vs. Foreground Processes](#4-background-vs-foreground-processes)  
- 
-
 5. [Useful Options and Commands](#5-useful-options-and-commands)  
-
-
 6. [Introduction to Scheduling](#6-introduction-to-scheduling)  
-
-
 7. [Summary](#7-summary)  
-
 
 ---
 
