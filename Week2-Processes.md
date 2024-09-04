@@ -1,4 +1,3 @@
-Here is the fixed markdown formatting without changing any of the content:
 
 ---
 
