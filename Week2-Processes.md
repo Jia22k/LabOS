@@ -349,18 +349,20 @@ The **`nice`** command in Linux allows you to influence the scheduling priority 
 
 By adjusting the nice value, you can fine-tune how the system allocates CPU resources to different tasks, ensuring that critical processes are prioritized, while less important tasks run in the background without hogging CPU time.
 
- #### SomeTrade-offs:  
+ #### **SomeTrade-offs:**  
+ 
 - FCFS: Simple, low context switch overhead, but long wait times for shorter processes.
 - Round-Robin: Fair time allocation but can incur high context switching overhead.
 - Priority Scheduling: Good for handling important tasks first but risks starvation for lower-priority processes.
 - Multilevel Queue: Offers flexibility for different process types but can be complex and may lead to starvation in lower-priority queues.
 - CFS: Balanced approach with minimal context switching, though not always suited for real-time applications.
 
-#### Balancing Context Switching and Performance **
+#### **Balancing Context Switching and Performance**
+
 The key to choosing the right scheduling algorithm is understanding the trade-offs in context switching and system responsiveness:
 
-- ** Too many context switches ** reduce overall CPU efficiency due to the time spent saving and restoring process states.
-- ** Too few context switches,** on the other hand, can lead to unfairness, with some processes hogging the CPU while others starve or become unresponsive.
+- **Too many context switches** reduce overall CPU efficiency due to the time spent saving and restoring process states.
+- **Too few context switches,** on the other hand, can lead to unfairness, with some processes hogging the CPU while others starve or become unresponsive.
 
 For example, in Round-Robin, a short time slice leads to too many context switches, causing overhead. In FCFS, long-running processes can dominate the CPU, causing other processes to wait too long.
 ---
