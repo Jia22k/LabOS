@@ -4,11 +4,11 @@ title: Week 2 - Processes State
 nav_order: 3
 ---
 
-### **CSDS 338 Review Session - Processes and Calls**
+## **CSDS 338 Review Session - Processes and Calls**
 
 <br>
 
-### **Contents**
+## **Contents**
 
 1. [Processes](#1-processes)  
 2. [Process States](#2-process-states)  
@@ -46,8 +46,6 @@ A **process** is an executing program that includes the program code, its data, 
     ```bash
     top
     ```
-
-    ![Top Output Example](https://example.com/top-output.png)
 
 ---
 
