@@ -363,8 +363,8 @@ The key to choosing the right scheduling algorithm is understanding the trade-of
 
 - **Too many context switches** reduce overall CPU efficiency due to the time spent saving and restoring process states.
 - **Too few context switches,** on the other hand, can lead to unfairness, with some processes hogging the CPU while others starve or become unresponsive.
-
-For example, in Round-Robin, a short time slice leads to too many context switches, causing overhead. In FCFS, long-running processes can dominate the CPU, causing other processes to wait too long.
+  
+> For example, in Round-Robin, a short time slice leads to too many context switches, causing overhead. In FCFS, long-running processes can dominate the CPU, causing other processes to wait too long.
 ---
 
 ## **Summary**
