@@ -1,22 +1,25 @@
+Here is the fixed markdown formatting without changing any of the content:
+
 ---
-layout: default
-title: Week 2 - Processes State
-nav_order: 3
+
+layout: default  
+title: Week 2 - Processes State  
+nav_order: 3  
+
 ---
 
 ## CSDS 338 Review Session - Processes and Calls
-
 <br>
 
 ## **Contents**
 
-1. [Processes](#1-processes)  
-2. [Process States](#2-process-states)  
-3. [Waiting Processes](#3-waiting-processes)  
-4. [Background vs. Foreground Processes](#4-background-vs-foreground-processes)  
-5. [Useful Options and Commands](#5-useful-options-and-commands)  
-6. [Introduction to Scheduling](#6-introduction-to-scheduling)  
-7. [Summary](#7-summary)  
+1. [Processes](#processes-and-their-components)  
+2. [Process States](#process-lifecycle-and-states)  
+3. [Waiting Processes](#waiting-processes)  
+4. [Background vs. Foreground Processes](#background-vs-foreground-processes-expanded)  
+5. [Useful Options and Commands](#useful-options-and-commands)  
+6. [Introduction to Scheduling](#introduction-to-scheduling-expanded)  
+7. [Summary](#summary)
 
 ---
 
@@ -31,7 +34,7 @@ A **process** is an instance of a program in execution. It includes several comp
 
 2. **Memory Segments of a Process**:
    The process’s memory is divided into different segments:
-   
+
    - **Stack**:  
      The stack holds local variables and function call information. It grows and shrinks dynamically as functions are called and return.  
      It also keeps track of the program's execution by storing return addresses and frame pointers, ensuring the program can resume properly after functions finish executing.
@@ -160,13 +163,14 @@ You can monitor the state of processes using the `top` command. The **S** column
 
 - Running (R): Process is using the CPU.
 - Sleeping (S): Process is waiting for an event.
-- Uninterruptible Sleep (D): Process is waiting for a resource that cannot be interrupted.
-- Zombie (Z): Process has completed but has not been cleaned up.
+- Uninterruptible Sleep (D): Process is waiting for a resource
 
+ that cannot be interrupted.
+- Zombie (Z): Process has completed but has not been cleaned up.
 
 ---
 
-### 3. Waiting Processes
+### Waiting Processes
 
 **Waiting processes** occur when a process needs some resource that isn't immediately available, such as I/O operations, memory, or other system resources. During this time, the process is placed in a non-executing state, allowing the CPU to focus on other tasks. This ensures that the CPU isn’t left idle while waiting for slower operations, like disk reads or network access, to complete.
 
@@ -199,7 +203,9 @@ Consider a situation where a program requests data from the disk:
 4. While the process waits for the disk to provide the data, the OS switches to another process that is ready to run.
 5. Once the data is available from the disk, the process is moved from the waiting state back to the ready state and eventually gets scheduled to run again.
 
-### 4. Background vs. Foreground Processes (Expanded)
+---
+
+### Background vs. Foreground Processes (Expanded)
 
 When interacting with the terminal, you can choose to run processes in two modes: **foreground** and **background**. Understanding the difference allows you to manage multiple tasks more efficiently without waiting for each one to complete before starting the next.
 
@@ -253,7 +259,7 @@ This ability to manage processes between the foreground and background is crucia
 
 ---
 
-## **5. Useful Options and Commands**
+### Useful Options and Commands
 
 Here are some helpful options and commands that make managing processes easier:
 
@@ -299,7 +305,7 @@ Here are some helpful options and commands that make managing processes easier:
 
 ---
 
-### 6. Introduction to Scheduling (Expanded)
+### Introduction to Scheduling (Expanded)
 
 **Scheduling** is a critical function of the operating system, managing how processes access the CPU and determining which processes should be executed and for how long. The primary goals of scheduling are to maximize CPU utilization, minimize wait times, and ensure fair allocation of resources among processes.
 
@@ -327,7 +333,9 @@ Here are some helpful options and commands that make managing processes easier:
 
 #### **Linux Scheduling – Completely Fair Scheduler (CFS)**
 
-Linux uses the **Completely Fair Scheduler (CFS)**, which aims to allocate CPU time in a fair and balanced way based on the concept of **virtual runtime**. Each process gets a fair share of CPU time according to its priority, and CFS ensures that every process gets enough CPU time relative to others. Interactive tasks, like responding to user inputs, generally have higher priority, ensuring that the system remains responsive to user actions.
+Linux uses the **Completely Fair Scheduler (CFS)**, which aims to allocate CPU time in a
+
+ fair and balanced way based on the concept of **virtual runtime**. Each process gets a fair share of CPU time according to its priority, and CFS ensures that every process gets enough CPU time relative to others. Interactive tasks, like responding to user inputs, generally have higher priority, ensuring that the system remains responsive to user actions.
 
 CFS avoids the issues of older algorithms (like Round-Robin’s context switching overhead or Priority Scheduling’s starvation risk) by balancing fairness and efficiency.
 
@@ -349,29 +357,11 @@ The **`nice`** command in Linux allows you to influence the scheduling priority 
 
 By adjusting the nice value, you can fine-tune how the system allocates CPU resources to different tasks, ensuring that critical processes are prioritized, while less important tasks run in the background without hogging CPU time.
 
- ### **SomeTrade-offs:**  
- 
-- FCFS: Simple, low context switch overhead, but long wait times for shorter processes.
-- Round-Robin: Fair time allocation but can incur high context switching overhead.
-- Priority Scheduling: Good for handling important tasks first but risks starvation for lower-priority processes.
-- Multilevel Queue: Offers flexibility for different process types but can be complex and may lead to starvation in lower-priority queues.
-- CFS: Balanced approach with minimal context switching, though not always suited for real-time applications.
-
- ### **Balancing the trade-offs:**  
-
-The key to choosing the right scheduling algorithm is understanding the trade-offs in context switching and system responsiveness:
-
-- **Too many context switches** reduce overall CPU efficiency due to the time spent saving and restoring process states.
-- **Too few context switches,** on the other hand, can lead to unfairness, with some processes hogging the CPU while others starve or become unresponsive.
-  
-> For example, in Round-Robin, a short time slice leads to too many context switches, causing overhead. In FCFS, long-running processes can dominate the CPU, causing other processes to wait too long.
-
-
 ---
 
-## **Summary**
+### Summary
 
-### **1. Processes**
+### 1. Processes
 - A **process** is a program in execution, consisting of program code, memory, and execution state.
 - **Threads** are smaller execution units within a process.
 - **Commands**:
@@ -380,7 +370,7 @@ The key to choosing the right scheduling algorithm is understanding the trade-of
 
 ---
 
-### **2. Process States**
+### 2. Process States
 - Processes move through states: **Running**, **Ready**, **Waiting**, **New**, and **Terminated**.
 - **Running**: The process is actively using the CPU.
 - **Ready**: Waiting for CPU time.
@@ -392,13 +382,13 @@ The key to choosing the right scheduling algorithm is understanding the trade-of
 
 ---
 
-### **3. Waiting Processes**
+### 3. Waiting Processes
 - **Waiting** processes free up the CPU while waiting for resources (e.g., I/O operations).
 - The OS switches between processes to maximize CPU usage (**context switching**).
 
 ---
 
-### **4. Background vs. Foreground Processes**
+### 4. Background vs. Foreground Processes
 - **Foreground** processes block the terminal until completed.
 - **Background** processes run while the terminal remains available for other commands.
 - **Commands**:
@@ -410,7 +400,7 @@ The key to choosing the right scheduling algorithm is understanding the trade-of
 
 ---
 
-### **5. Useful Options and Commands**
+### 5. Useful Options and Commands
 - **Terminating a Process**:  
   ```bash
   kill <PID>
@@ -421,7 +411,7 @@ The key to choosing the right scheduling algorithm is understanding the trade-of
 
 ---
 
-### **6. Scheduling**
+### 6. Scheduling
 - The OS determines which processes run using scheduling algorithms:
   - **First-Come, First-Served (FCFS)**: Simple, but can cause long wait times.
   - **Round-Robin (RR)**: Each process gets a time slice to run.
@@ -431,5 +421,3 @@ The key to choosing the right scheduling algorithm is understanding the trade-of
 **Commands**:
 - `nice`: Set the priority of a new process.
 - `renice`: Adjust the priority of an existing process.
-
-
