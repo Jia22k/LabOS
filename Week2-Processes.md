@@ -1,9 +1,9 @@
-
 ---
 layout: default
-title: Week 2 - Processes State  
+title: Week 2 - Processes State
 nav_order: 2
 ---
+
 
 ## CSDS 338 Review Session - Processes and Calls
 <br>
