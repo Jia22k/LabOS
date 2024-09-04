@@ -1,16 +1,5 @@
-Here’s a more detailed explanation of the review session with additional examples and deeper insights:
 
----
-
-### **CSDS 338 Review Session - Processes and Calls (Fall 2024)**
-
----
-
-Here’s a content page for the review session:
-
----
-
-### **CSDS 338 Review Session - Processes and Calls (Fall 2024)**
+### **CSDS 338 Review Session - Processes and Calls**
 
 ---
 
