@@ -357,13 +357,16 @@ By adjusting the nice value, you can fine-tune how the system allocates CPU reso
 - Multilevel Queue: Offers flexibility for different process types but can be complex and may lead to starvation in lower-priority queues.
 - CFS: Balanced approach with minimal context switching, though not always suited for real-time applications.
 
-### **Balancing Context Switching and Performance**
+ ### **Balancing the trade-offs:**  
 
 The key to choosing the right scheduling algorithm is understanding the trade-offs in context switching and system responsiveness:
 
 - **Too many context switches** reduce overall CPU efficiency due to the time spent saving and restoring process states.
 - **Too few context switches,** on the other hand, can lead to unfairness, with some processes hogging the CPU while others starve or become unresponsive.
+  
 > For example, in Round-Robin, a short time slice leads to too many context switches, causing overhead. In FCFS, long-running processes can dominate the CPU, causing other processes to wait too long.
+
+
 ---
 
 ## **Summary**
