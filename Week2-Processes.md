@@ -1,3 +1,8 @@
+---
+layout: default
+title: Week 1 - Intro
+nav_order: 3
+---
 
 ### **CSDS 338 Review Session - Processes and Calls**
 
@@ -6,44 +11,29 @@
 ### **Contents**
 
 1. [Processes](#1-processes)  
-   1.1 [Definition of a Process](#definition)  
-   1.2 [Key Components of a Process](#components)  
-   1.3 [Commands to View and Manage Processes](#commands)  
+ 
 
 2. [Process States](#2-process-states)  
-   2.1 [Understanding Process States](#understanding-states)  
-   2.2 [Process States in `top`](#states-in-top)  
+
 
 3. [Waiting Processes](#3-waiting-processes)  
-   3.1 [Why Waiting Processes are Important](#importance-of-waiting)  
-   3.2 [Context Switching](#context-switching)  
+
 
 4. [Background vs. Foreground Processes](#4-background-vs-foreground-processes)  
-   4.1 [Foreground Processes](#foreground-processes)  
-   4.2 [Background Processes](#background-processes)  
-   4.3 [Pausing and Resuming Processes](#pausing-and-resuming)  
+ 
 
 5. [Useful Options and Commands](#5-useful-options-and-commands)  
-   5.1 [Listing Processes with `ps`](#listing-processes)  
-   5.2 [Terminating a Process with `kill`](#terminating-process)  
-   5.3 [Adjusting Process Priority with `nice` and `renice`](#adjusting-priority)  
+
 
 6. [Introduction to Scheduling](#6-introduction-to-scheduling)  
-   6.1 [What is Scheduling?](#what-is-scheduling)  
-   6.2 [Types of Scheduling Algorithms](#types-of-scheduling)  
-   6.3 [Linux Scheduling (CFS)](#linux-scheduling)  
+
 
 7. [Summary](#7-summary)  
-   7.1 [Processes Recap](#processes-recap)  
-   7.2 [Process States Recap](#states-recap)  
-   7.3 [Waiting Processes Recap](#waiting-recap)  
-   7.4 [Background vs. Foreground Recap](#bg-vs-fg-recap)  
-   7.5 [Useful Commands Recap](#useful-commands-recap)  
-   7.6 [Scheduling Recap](#scheduling-recap)
+
 
 ---
 
-### **1. Processes**
+## **1. Processes**
 
 **Definition**:  
 A **process** is an executing program that includes the program code, its data, and the state of the execution (e.g., variables, registers, stack, heap). The operating system manages the execution of processes by scheduling them on the CPU.
@@ -74,7 +64,7 @@ A **process** is an executing program that includes the program code, its data, 
 
 ---
 
-### **2. Process States**
+## **2. Process States**
 
 Processes can be in different states depending on whether they are currently using the CPU, waiting for resources, or have completed their execution.
 
@@ -102,7 +92,7 @@ Processes can be in different states depending on whether they are currently usi
 
 ---
 
-### **3. Waiting Processes**
+## **3. Waiting Processes**
 
 Processes may enter a waiting state when they need resources that are not currently available. This state is critical for efficient CPU utilization, as it allows the operating system to switch out a process waiting on I/O or other resources and run another process that is ready.
 
@@ -126,7 +116,7 @@ A process requests data from the hard drive, but while waiting for the data, the
 
 ---
 
-### **4. Background vs. Foreground Processes**
+## **4. Background vs. Foreground Processes**
 
 When working in the terminal, a process can either run in the **foreground**, where it actively interacts with the user, or in the **background**, where it runs independently of the terminal's input.
 
@@ -168,7 +158,7 @@ When working in the terminal, a process can either run in the **foreground**, wh
 
 ---
 
-### **5. Useful Options and Commands**
+## **5. Useful Options and Commands**
 
 Here are some helpful options and commands that make managing processes easier:
 
@@ -214,7 +204,7 @@ Here are some helpful options and commands that make managing processes easier:
 
 ---
 
-### **6. Introduction to Scheduling**
+## **6. Introduction to Scheduling**
 
 **What is Scheduling?**  
 Scheduling is the process by which the operating system determines which process gets to run on the CPU and for how long. The goal is to optimize CPU utilization and ensure processes are fairly and efficiently handled.
@@ -251,7 +241,7 @@ Linux uses the **Completely Fair Scheduler (CFS)**, which aims to give each proc
 
 ---
 
-### **Summary**
+## **Summary**
 
 ### **1. Processes**
 - A **process** is a program in execution, consisting of program code, memory, and execution state.
