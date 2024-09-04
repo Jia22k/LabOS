@@ -4,7 +4,7 @@ title: Week 2 - Processes State
 nav_order: 3
 ---
 
-## **CSDS 338 Review Session - Processes and Calls**
+## CSDS 338 Review Session - Processes and Calls
 
 <br>
 
