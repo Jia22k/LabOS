@@ -85,42 +85,53 @@ In summary, **`brk`** is limited to managing the heap and requires memory to be 
 
 ### **Using `strace` to Trace System Calls**
 
-To understand how system calls work in real-time, we can use a tool called **`strace`**. This tool captures and logs system calls made by a program, allowing you to see exactly what requests the program is making to the OS.
+`strace` is a diagnostic tool used in Linux to trace system calls made by a program. It allows you to see how a program interacts with the operating system by monitoring system calls such as file access, memory allocation, process creation, and network communication.
 
-1. **What is `strace`?**
-   - **`strace`** is a diagnostic and debugging tool for Linux. It traces all system calls made by a running program and outputs details such as the system call name, arguments, and the return value.
-   - **Why use `strace`?** It helps developers and system administrators understand how a program interacts with the OS, debug errors, and monitor system resource usage.
+When a program runs, it frequently communicates with the kernel through system calls. `strace` captures this interaction, showing you what system calls are made, the parameters passed to them, and their return values. It’s especially useful for debugging and troubleshooting performance issues or errors that arise from incorrect system calls.
 
-2. **Example Usage of `strace`:**
-   - **Command:**
-     ```bash
-     strace ./my_program
-     ```
-     This command will trace the system calls made by `my_program`.
+### Example: Using `strace` with `ls`
 
-3. **Tracking Memory Management with `strace`:**
-   - **Tracking `brk`:**
-     ```bash
-     brk(0x600000) = 0x600000
-     brk(0x601000) = 0x601000
-     ```
-     This output shows that the program is expanding its heap by using the `brk` system call to allocate additional memory.
-   
-   - **Tracking `mmap`:**
-     ```bash
-     mmap(NULL, 8192, PROT_READ|PROT_WRITE, MAP_PRIVATE|MAP_ANONYMOUS, -1, 0) = 0x7f2bfae00000
-     ```
-     This shows that 8 KB of anonymous memory has been mapped into the process’s address space using `mmap`.
+Let’s use `strace` to trace the system calls made by the `ls` command, which lists the contents of a directory.
 
-4. **Interpreting `strace` Output:**
-   - The `strace` output provides detailed information about the system calls a process is making. For instance:
-     ```bash
-     open("/etc/passwd", O_RDONLY) = 3
-     read(3, "root:x:0:0:root:/root:/bin/bash\n", 1024) = 34
-     close(3) = 0
-     ```
-     This shows that the program is opening the `/etc/passwd` file, reading its contents, and then closing the file descriptor.
+Run the following command:
+```bash
+strace ls
+```
 
+This will generate an output that logs all the system calls made by `ls`. Here's a simplified version of what the output might look like:
+
+```bash
+execve("/bin/ls", ["ls"], 0x7ffec5f65a10 /* 55 vars */) = 0
+brk(NULL)                               = 0x55a6b19a5000
+access("/etc/ld.so.preload", R_OK)      = -1 ENOENT (No such file or directory)
+openat(AT_FDCWD, "/etc/ld.so.cache", O_RDONLY|O_CLOEXEC) = 3
+fstat(3, {st_mode=S_IFREG|0644, st_size=12345, ...}) = 0
+mmap(NULL, 12345, PROT_READ, MAP_PRIVATE, 3, 0) = 0x7f8b64852000
+close(3)                                = 0
+openat(AT_FDCWD, "/usr/lib/x86_64-linux-gnu/libc.so.6", O_RDONLY|O_CLOEXEC) = 3
+...
+write(1, "file1  file2  file3\n", 20)   = 20
+close(3)                                = 0
+exit_group(0)                           = 0
+```
+
+### Explanation of the `strace ls` Output:
+
+- **`execve("/bin/ls", ["ls"], ... )`**: This is the first system call made by `ls`. It calls `execve` to execute the `/bin/ls` binary, passing `"ls"` as the argument.
+  
+- **`brk(NULL)`**: This is a memory management system call, which is used to adjust the program’s data segment (heap). Here, it’s checking the current break value (the end of the data segment).
+  
+- **`access("/etc/ld.so.preload", R_OK)`**: This checks for the existence of a file that might be preloaded, but it returns an error (`ENOENT`) because the file doesn’t exist.
+
+- **`openat(AT_FDCWD, "/etc/ld.so.cache", O_RDONLY|O_CLOEXEC)`**: This opens the shared library cache file (`/etc/ld.so.cache`) so that `ls` can load the necessary libraries.
+
+- **`write(1, "file1  file2  file3\n", 20)`**: This is where the actual output of `ls` happens. `write(1, ...)` writes the list of files to the standard output (`1` refers to stdout), in this case, printing `file1`, `file2`, and `file3`.
+
+- **`exit_group(0)`**: This signals that the program has finished successfully and is exiting with a status code of `0`.
+
+### Summary
+
+`strace` provides a detailed view of the system calls a program makes, offering insights into how it interacts with the operating system. Using `strace ls`, you can see how even a simple command like `ls` makes many system calls to perform tasks like accessing files, managing memory, and writing output.
 ---
 
 ### **Connecting the Concepts:**
