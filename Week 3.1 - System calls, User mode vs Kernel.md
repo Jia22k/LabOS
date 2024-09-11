@@ -47,38 +47,41 @@ Programs running in **user mode** occasionally need to perform tasks that requir
 
 ---
 
-### **Memory Management System Calls: `mmap` and `brk`**
+### 1. **`mmap` (Memory Mapping)**
 
-In the context of memory management, two important system calls are `mmap` and `brk`. These system calls allow processes to request and manage memory dynamically.
+- **Purpose**: The `mmap` system call allows a process to map files or anonymous memory into its own address space. This means that a file or a block of memory can be treated as if it were directly part of the program’s memory, allowing fast access.
+- **Use Cases**:
+  - **File-backed mapping**: A file, like a database or a large log, can be mapped to memory, so that reading and writing to that file feels like reading and writing to memory. This speeds up file I/O operations since file data is handled similarly to memory data.
+  - **Anonymous mapping**: Allocates memory not linked to any file. This is useful for allocating large blocks of memory, for example, when creating large buffers.
 
-1. **`mmap` (Memory Mapping):**
-   - **Purpose:** `mmap` maps files or anonymous memory into a process's address space. It allows a process to directly access files as if they were in memory, which can improve performance for file I/O, or allocate large blocks of memory.
-   - **Uses:**
-     - **File-backed mapping:** Maps a file (e.g., a large database or log) into memory so the process can read/write data to it efficiently.
-     - **Anonymous mapping:** Allocates memory not backed by a file, often used for large dynamic memory allocations like buffers.
-   - **Example of `mmap`:**
-     ```c
-     void *addr = mmap(NULL, 4096, PROT_READ | PROT_WRITE, MAP_PRIVATE | MAP_ANONYMOUS, -1, 0);
-     ```
-     This code maps 4 KB of anonymous memory into the process’s address space, which the program can read and write.
+- **Example**:
+  ```c
+  void *addr = mmap(NULL, 4096, PROT_READ | PROT_WRITE, MAP_PRIVATE | MAP_ANONYMOUS, -1, 0);
+  ```
+  In this example, the code maps 4 KB of anonymous memory (which is memory not tied to a file) into the process’s address space. The program can then read from and write to this memory.
 
-2. **`brk` (Heap Management):**
-   - **Purpose:** The `brk` system call is used to expand or contract the heap, which is the part of a process's memory used for dynamic memory allocation.
-   - **How it works:** `brk` adjusts the process’s data segment, which grows or shrinks the heap as needed. Functions like `malloc` in C use `brk` to request more memory.
-   - **Example of `brk`:**
-     ```bash
-     brk(0x600000) = 0x600000  # Expands the heap to address 0x600000
-     brk(0x601000) = 0x601000  # Further expands the heap by 4096 bytes
-     ```
+### 2. **`brk` (Heap Management)**
 
-3. **`mmap` vs. `brk`:**
-   - **`brk`** is limited to contiguous allocations, meaning the heap must grow in a single block. If the space following the heap is unavailable, `brk` will fail.
-   - **`mmap`**, on the other hand, is more flexible. It can allocate non-contiguous memory and is often preferred for large or non-contiguous allocations. It can also map files, allowing programs to manipulate files directly in memory.
-   - **Use case distinction:**
-     - **Use `brk`** for small, contiguous dynamic allocations.
-     - **Use `mmap`** for large allocations, file-backed memory, or when non-contiguous memory is needed.
+- **Purpose**: The `brk` system call adjusts the size of the process's heap, which is a part of memory used for dynamic memory allocations (like when you use `malloc()` in C). The heap can grow or shrink depending on the memory requirements of the process.
+- **How it works**: The `brk` call changes the end of the data segment (heap). When a program needs more memory, functions like `malloc()` will use `brk` to increase the heap size. Conversely, when memory is no longer needed, the heap size can be reduced.
+  
+- **Example**:
+  ```bash
+  brk(0x600000)  # Expands the heap to address 0x600000
+  brk(0x601000)  # Further expands the heap by 4096 bytes (4KB)
+  ```
+  This changes the size of the heap, allowing the program to use more memory.
 
----
+### 3. **`mmap` vs. `brk`**:
+
+- **`brk`**: The `brk` system call can only grow the heap **contiguously**. This means the memory allocated by `brk` must be in one continuous block. If there’s no free space immediately after the heap, the `brk` call will fail, meaning the program cannot allocate more memory.
+- **`mmap`**: More flexible compared to `brk`. `mmap` can allocate non-contiguous blocks of memory and is typically used for **large allocations** or when you need memory that doesn’t need to be next to the current heap. Additionally, `mmap` is useful for **mapping files** directly into memory, allowing programs to handle large files more efficiently.
+
+### 4. **When to Use Each**:
+- **Use `brk`** for small, contiguous allocations, like those done by `malloc()` in C.
+- **Use `mmap`** for large memory allocations, when memory doesn’t need to be contiguous, or when mapping files directly into memory.
+
+In summary, **`brk`** is limited to managing the heap and requires memory to be allocated in one continuous block, while **`mmap`** is more versatile, able to map files into memory and handle non-contiguous memory blocks.
 
 ### **Using `strace` to Trace System Calls**
 
