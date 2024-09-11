@@ -1,6 +1,6 @@
 ---
 layout: default
-title: Week 3, Part 1 - System calls, User mode vs Kernel
+title: Week 3.1 - System calls, User mode vs Kernel
 nav_order: 3
 ---
 
