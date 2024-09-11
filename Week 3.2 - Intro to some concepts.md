@@ -7,7 +7,7 @@ nav_order: 5
 
 ### A brief Intro 
 
-> This is a brief introduction to help prepare you for Thursday's class, which I find a bit complex. To make the transition smoother, we'll start with an overview of the key concepts.---
+> This is a brief introduction to help prepare you for Thursday's class, which I think is a little complex. To make the transition smoother for you tomorrow, we'll start with an overview of the key concepts.
 
 #### **1. Preemption: Involuntary Context Switch**
 - **What is Preemption?**
