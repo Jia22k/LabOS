@@ -1,7 +1,11 @@
-This is just an intro to help with Thursday class, which is a little complex in my perspective, so to ease your transition, this is just an introduction. 
+layout: default
+title: Week 3, Part 1 - Intro to key concepts for Thursday
+nav_order: 4
 ---
 
-### **Class Notes – Week 3: Affinity, Migration, Fork (Part 1)**
+### A brief Intro 
+
+> This is a brief introduction to help prepare you for Thursday's class, which I find a bit complex. To make the transition smoother, we'll start with an overview of the key concepts.---
 
 #### **1. Preemption: Involuntary Context Switch**
 - **What is Preemption?**
