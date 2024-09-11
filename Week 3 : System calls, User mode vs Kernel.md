@@ -1,3 +1,11 @@
+---
+layout: default
+title: Week 3, Part 1 - System calls, User mode vs Kernel
+nav_order: 3
+---
+
+
+
 ### **User Mode vs. Kernel Mode in Operating Systems**
 
 In an operating system, there are two distinct modes of operation: **user mode** and **kernel mode**. These modes are crucial to the overall design and security of the operating system and help protect system resources.
