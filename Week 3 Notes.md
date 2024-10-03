@@ -1,4 +1,35 @@
 
+
+## Table of Contents
+
+1. [Processes](#processes)  
+   - [Key Components of a Process](#key-components-of-a-process)  
+
+2. [Process Control Block (PCB)](#process-control-block)  
+   - [Key Components of a PCB](#key-components-of-a-pcb)  
+
+3. [Memory Management](#memory-management)  
+   - [Text Segment](#text-segment)  
+   - [Data Segment](#data-segment)  
+   - [BSS Segment](#bss-segment)  
+   - [Heap Segment](#heap-segment)  
+   - [Stack Segment](#stack-segment)  
+   - [Kernel Space](#kernel-space)  
+   - [Memory Layout Summary](#memory-layout-summary)  
+
+4. [Memory Example](#memory-example)  
+
+5. [Process Lifecycle](#process-lifecycle)  
+   - [Process Lifecycle Example](#process-lifecycle-example)  
+
+6. [Context Switching](#context-switching)  
+   - [Context Switching Example](#context-switching-example)  
+
+7. [User Mode vs Kernel Mode](#user-mode-vs-kernel-mode)  
+   - [Key Differences](#key-differences-to-remember)  
+
+---
+
 ## Processes
 
 A **process** is more than just program code; it's an active entity in the system. It's essentially a running instance of a program being executed by the operating system.
@@ -274,4 +305,126 @@ This is how context switching allows multitasking between multiple processes run
    - Crashes in **kernel mode** can bring down the entire system.
 
 ---
+
+Here's the markdown content focused on **System Calls** and **strace** as per your request:
+
+---
+
+layout: default  
+title: Week 3 - System Calls, User Mode vs Kernel  
+nav_order: 3  
+
+---
+
+### **System Calls: The Bridge Between User Mode and Kernel Mode**
+
+Programs running in **user mode** occasionally need to perform tasks that require privileged access, such as reading from a file, communicating with hardware, or managing memory. Since these tasks require **kernel mode** privileges, the operating system provides a mechanism called a **system call** to enable this controlled access.
+
+1. **What is a System Call?**
+   - A **system call** is a request made by a user program to the operating system to perform an action that requires higher privileges, such as interacting with hardware or managing system resources.
+   - When a program needs to perform a task that cannot be done in user mode, it invokes a system call, which causes a controlled switch from user mode to kernel mode. Once the task is completed, control is returned to the user program.
+
+2. **How System Calls Work:**
+   - **Mode Transition:** When a program in user mode makes a system call (e.g., reading a file), the CPU switches to kernel mode so the operating system can execute the requested operation. After the system call completes, the CPU switches back to user mode.
+   - **Privilege Separation:** This separation between user mode and kernel mode ensures that user programs can only access system resources in a controlled manner, preventing security risks or system crashes due to buggy or malicious code.
+
+3. **Examples of Common System Calls:**
+   - **File Operations:**
+     - `open`, `read`, `write`, `close` — These system calls allow programs to interact with files by reading and writing data, as well as opening or closing files.
+   - **Process Management:**
+     - `fork` — Creates a new process.
+     - `exec` — Replaces the current process image with a new program.
+     - `wait` — Suspends execution until a child process finishes.
+     - `exit` — Terminates the calling process.
+   - **Memory Management:**
+     - `mmap` — Maps files or anonymous memory into the process’s address space.
+     - `brk` — Adjusts the end of the process’s heap for dynamic memory allocation.
+
+---
+
+### **Using `strace` to Trace System Calls**
+
+`strace` is a diagnostic tool used in Linux to trace system calls made by a program. It allows you to see how a program interacts with the operating system by monitoring system calls such as file access, memory allocation, process creation, and network communication.
+
+When a program runs, it frequently communicates with the kernel through system calls. `strace` captures this interaction, showing you what system calls are made, the parameters passed to them, and their return values. It’s especially useful for debugging and troubleshooting performance issues or errors that arise from incorrect system calls.
+
+### Example: Using `strace` with `ls`
+
+Let’s use `strace` to trace the system calls made by the `ls` command, which lists the contents of a directory.
+
+Run the following command:
+
+```bash
+strace ls
+```
+
+This will generate an output that logs all the system calls made by `ls`. Here's a simplified version of what the output might look like:
+
+```bash
+execve("/bin/ls", ["ls"], 0x7ffec5f65a10 /* 55 vars */) = 0
+brk(NULL)                               = 0x55a6b19a5000
+access("/etc/ld.so.preload", R_OK)      = -1 ENOENT (No such file or directory)
+openat(AT_FDCWD, "/etc/ld.so.cache", O_RDONLY|O_CLOEXEC) = 3
+fstat(3, {st_mode=S_IFREG|0644, st_size=12345, ...}) = 0
+mmap(NULL, 12345, PROT_READ, MAP_PRIVATE, 3, 0) = 0x7f8b64852000
+close(3)                                = 0
+openat(AT_FDCWD, "/usr/lib/x86_64-linux-gnu/libc.so.6", O_RDONLY|O_CLOEXEC) = 3
+...
+write(1, "file1  file2  file3\n", 20)   = 20
+close(3)                                = 0
+exit_group(0)                           = 0
+```
+
+### Explanation of the `strace ls` Output:
+
+- **`execve("/bin/ls", ["ls"], ... )`**: This is the first system call made by `ls`. It calls `execve` to execute the `/bin/ls` binary, passing `"ls"` as the argument.
+  
+- **`brk(NULL)`**: This is a memory management system call, which is used to adjust the program’s data segment (heap). Here, it’s checking the current break value (the end of the data segment).
+  
+- **`access("/etc/ld.so.preload", R_OK)`**: This checks for the existence of a file that might be preloaded, but it returns an error (`ENOENT`) because the file doesn’t exist.
+
+- **`openat(AT_FDCWD, "/etc/ld.so.cache", O_RDONLY|O_CLOEXEC)`**: This opens the shared library cache file (`/etc/ld.so.cache`) so that `ls` can load the necessary libraries.
+
+- **`write(1, "file1  file2  file3\n", 20)`**: This is where the actual output of `ls` happens. `write(1, ...)` writes the list of files to the standard output (`1` refers to stdout), in this case, printing `file1`, `file2`, and `file3`.
+
+- **`exit_group(0)`**: This signals that the program has finished successfully and is exiting with a status code of `0`.
+
+---
+
+### Recap
+
+#### **Processes:**
+- A **process** is a running instance of a program, managed by the operating system.
+- **Key components of a process**:
+  1. **Program Code**: Set of instructions the process executes.
+  2. **Data**: Information the process works with (user input, system data, etc.).
+  3. **Program Counter**: Tracks the current instruction being executed.
+  4. **Stack**: Stores temporary information (e.g., function parameters, return addresses).
+  
+#### **Process Control Block (PCB):**
+- A **Process Control Block (PCB)** contains information about a process, enabling the OS to manage it.
+- **Key components of a PCB**:
+  1. **Process ID (PID)**: Unique identifier for the process.
+  2. **Process State**: Indicates the process's current state (e.g., New, Ready, Running, Waiting, Terminated).
+  3. **Program Counter**: Holds the address of the next instruction to execute.
+  4. **CPU Registers**: Stores working registers to be saved during a context switch.
+  5. **Memory Management Information**: Tracks memory allocation for the process (e.g., pointers to code, data, and stack segments).
+  6. **I/O Status Information**: Tracks I/O devices assigned to the process.
+  7. **Scheduling Information**: Contains priority and scheduling details.
+
+#### **Memory Management:**
+- **Text Segment**: Stores the compiled code, typically read-only.
+- **Data Segment**: Contains initialized global and static variables.
+- **BSS Segment**: Holds uninitialized global and static variables, automatically initialized to zero.
+- **Heap Segment**: Used for dynamically allocated memory, grows upward.
+- **Stack Segment**: Stores local variables and function call information, grows downward.
+- **Kernel Space**: Reserved for the OS, inaccessible to user programs.
+
+#### **Key Memory Concepts:**
+- **Local Variables (Stack)**: Created when a function is called, destroyed when the function returns.
+- **Global Variables (Data/BSS)**: Persist for the lifetime of the program.
+- **Dynamic Memory (Heap)**: Allocated with `malloc()` and must be manually freed.
+- **Text Segment**: Contains program instructions, typically read-only to prevent modifications.
+
+--- 
 
