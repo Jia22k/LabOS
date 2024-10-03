@@ -13,24 +13,16 @@ nav_order: 3
 2. [Process Control Block (PCB)](#process-control-block)  
    - [Key Components of a PCB](#key-components-of-a-pcb)  
 
-3. [Memory Management](#memory-management)  
-   - [Text Segment](#text-segment)  
-   - [Data Segment](#data-segment)  
-   - [BSS Segment](#bss-segment)  
-   - [Heap Segment](#heap-segment)  
-   - [Stack Segment](#stack-segment)  
-   - [Kernel Space](#kernel-space)  
-   - [Memory Layout Summary](#memory-layout-summary)  
+3. [Memory Management](#memory-management)   
+   - [Memory Example](#memory-example)  
 
-4. [Memory Example](#memory-example)  
-
-5. [Process Lifecycle](#process-lifecycle)  
+4. [Process Lifecycle](#process-lifecycle)  
    - [Process Lifecycle Example](#process-lifecycle-example)  
 
-6. [Context Switching](#context-switching)  
+5. [Context Switching](#context-switching)  
    - [Context Switching Example](#context-switching-example)  
 
-7. [User Mode vs Kernel Mode](#user-mode-vs-kernel-mode)  
+6. [User Mode vs Kernel Mode](#user-mode-vs-kernel-mode)  
    - [Key Differences](#key-differences-to-remember)  
 
 ---
@@ -308,17 +300,6 @@ This is how context switching allows multitasking between multiple processes run
 3. **Stability**:
    - Crashes in **user mode** are isolated to the application.
    - Crashes in **kernel mode** can bring down the entire system.
-
----
-
-Here's the markdown content focused on **System Calls** and **strace** as per your request:
-
----
-
-layout: default  
-title: Week 3 - System Calls, User Mode vs Kernel  
-nav_order: 3  
-
 ---
 
 ### **System Calls: The Bridge Between User Mode and Kernel Mode**
