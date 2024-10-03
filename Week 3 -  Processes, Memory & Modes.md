@@ -1,6 +1,6 @@
 ---
 layout: default
-title: Week 3 - Processes, Memory Management, and User vs Kernel Mode
+title: Week 3 - Processes, Memory & Modes
 nav_order: 3
 ---
 
