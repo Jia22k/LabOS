@@ -1,8 +1,3 @@
----
-layout: default
-title: Week 3 - System calls, User mode vs Kernel
-nav_order: 3
----
 
 
 ### **User Mode vs. Kernel Mode in Operating Systems**
