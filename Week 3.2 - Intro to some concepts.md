@@ -1,7 +1,7 @@
 ---
 layout: default
-title: Week 3 - Intro to some concepts
-nav_order: 5
+title: Week 4 - Intro to some concepts
+nav_order: 4
 ---
 
 
