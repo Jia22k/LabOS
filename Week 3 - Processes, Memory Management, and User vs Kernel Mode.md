@@ -1,3 +1,8 @@
+---
+layout: default
+title: Week 3 - Processes, Memory Management, and User vs Kernel Mode
+nav_order: 3
+---
 
 
 ## Table of Contents
