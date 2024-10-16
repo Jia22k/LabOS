@@ -1,3 +1,9 @@
+---
+layout: default
+title: Week 1 - Intro
+nav_order: 2
+---
+
 ### **Operating Systems: Weekly Recap and Key Concepts**  
 
 This week, the professor guided us through several fundamental **operating system concepts**, focusing on **process scheduling, memory management, process monitoring, and useful terminal tools like `vi`**. We explored how the **Linux kernel** allocates CPU time among processes, the **memory layout of running programs**, and effective ways to **monitor processes using the `/proc` filesystem**. The professor also emphasized **hands-on tools** for efficient file editing with `vi` and demonstrated how Linux's **Completely Fair Scheduler (CFS)** ensures fair CPU allocation. Here’s a detailed breakdown of the topics discussed:
