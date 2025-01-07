@@ -4,6 +4,7 @@ title: Week 1 - Intro
 nav_order: 2
 ---
 
+
 ## Command Line and Server Basics
 <br>
 Hey there! Welcome to a guide on some essential command-line and server basics. This is essential for our class and assignments. I'll cover some of the most basic stuff here, but the best way to learn is by being curious and toying around. I may go a little fast today to cover everything, if we have time we can do another Vim exercise.
