@@ -6,9 +6,30 @@ nav_order: 2
 
 
 ## CSDS 338 Processes and Calls
-
 ---
 
+## Contents
+1. [Introduction to Processes](#introduction-to-processes)
+2. [Key Components of a Process](#key-components-of-a-process)
+   - [Program Code (Text Segment)](#1-program-code-text-segment)
+   - [Data Segment](#2-data-segment)
+   - [Stack](#3-stack)
+   - [Heap](#4-heap)
+3. [Process Control Block (PCB)](#process-control-block-pcb)
+4. [Process Lifecycle and States](#process-lifecycle-and-states)
+   - [New State](#1-new-state)
+   - [Ready State](#2-ready-state)
+   - [Running State](#3-running-state)
+   - [Waiting (Blocked) State](#4-waiting-blocked-state)
+   - [Terminated (Zombie) State](#5-terminated-zombie-state)
+5. [Understanding Process States in Real Time](#understanding-process-states-in-real-time)
+6. [Waiting Processes and CPU Utilization](#waiting-processes-and-cpu-utilization)
+7. [Foreground vs. Background Processes](#foreground-vs-background-processes)
+   - [Foreground Processes](#foreground-processes)
+   - [Background Processes](#background-processes)
+8. [Essential Linux Commands for Process Management](#essential-linux-commands-for-process-management)
+9. [Context Switching](#context-switching)
+10. [Summary and Best Practices](#summary-and-best-practices)
 ## **Introduction to Processes**  
 
 A **process** is an active instance of a program running on a computer. It represents the execution of code, from the time it is loaded into memory until it completes. A process can be thought of as the key element of multitasking in operating systems, where the CPU switches between processes, allowing multiple programs to run seemingly at the same time.  
