@@ -1,7 +1,7 @@
 ---
 layout: default
 title: Week 5 - Recap
-nav_order: 5
+nav_order: 
 ---
 
 ### **Operating Systems: Weekly Recap and Key Concepts**  
