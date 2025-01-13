@@ -1,5 +1,5 @@
 ---
-layout: docs
+layout: default
 title: Week 2 - Processes
 nav_order: 2
 ---
