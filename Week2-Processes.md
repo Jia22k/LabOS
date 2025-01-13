@@ -1,7 +1,7 @@
 ---
-layout: default
+layout: docs
 title: Week 2 - Processes
-nav_order: 
+nav_order: 2
 ---
 
 ## CSDS 338 Processes and Calls
