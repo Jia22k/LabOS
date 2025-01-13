@@ -1,7 +1,7 @@
 ---
 layout: default
 title: Week 7 - important conepts
-nav_order: 6
+nav_order: 
 ---
 # **Important Operating System Concepts**
 
