@@ -1,8 +1,4 @@
----
-layout: default
-title: Week 7 - important conepts
-nav_order: 
----
+
 # **Important Operating System Concepts**
 
 This detailed guide dives into some of the most critical operating system (OS) concepts, focusing on **memory management**, **paging**, **swapping**, **dirty pages**, **disk cache**, **page replacement algorithms**, and **advanced memory management techniques** like **zram** and **zswap**. These concepts are essential to understanding how operating systems manage limited memory resources efficiently while maintaining high performance.
