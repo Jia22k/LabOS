@@ -1,7 +1,7 @@
 ---
 layout: default
 title: Week 6 - Recap
-nav_order: 5
+nav_order: 
 ---
 # **Week 6: In-Depth Memory Management – Allocation Strategies, Paging, TLB, Swapping, Buddy, and Slab Allocators**
 
