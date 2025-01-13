@@ -1,9 +1,3 @@
----
-layout: default
-title: Week 2 - Processes State
-nav_order: 
----
-
 
 ## CSDS 338 Processes and Calls
 ---
