@@ -1,3 +1,8 @@
+---
+layout: default
+title: Week 1 - Intro
+nav_order: 3
+---
 
 ## CSDS 338 Processes and Calls
 ---
