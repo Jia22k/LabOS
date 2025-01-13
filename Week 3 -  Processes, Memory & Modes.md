@@ -1,7 +1,7 @@
 ---
 layout: default
 title: Week 3 - Processes, Memory & Modes
-nav_order: 3
+nav_order: 
 ---
 
 
