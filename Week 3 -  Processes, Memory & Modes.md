@@ -1,9 +1,3 @@
----
-layout: default
-title: Week 3 - Processes, Memory & Modes
-nav_order: 
----
-
 
 ## Table of Contents
 
