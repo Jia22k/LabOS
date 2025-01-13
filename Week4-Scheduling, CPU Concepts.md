@@ -1,7 +1,7 @@
 ---
 layout: default
 title: Week 4 - Scheduling, CPU Concepts
-nav_order: 4
+nav_order: 
 ---
 
 
