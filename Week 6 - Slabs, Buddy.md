@@ -1,8 +1,4 @@
----
-layout: default
-title: Week 6 - Recap
-nav_order: 
----
+
 # **Week 6: In-Depth Memory Management – Allocation Strategies, Paging, TLB, Swapping, Buddy, and Slab Allocators**
 
 This week’s lectures focused on **how operating systems allocate, manage, and optimize memory**. We explored key concepts like **paging, TLB management, swapping, the buddy and slab allocators**, and strategies to mitigate fragmentation. These topics are crucial for understanding how OSes ensure efficiency, even with limited physical memory. This document provides an in-depth analysis of the week’s topics.
