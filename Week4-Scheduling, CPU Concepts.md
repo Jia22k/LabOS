@@ -1,8 +1,3 @@
----
-layout: default
-title: Week 4 - Scheduling, CPU Concepts
-nav_order: 
----
 
 
 ### Process Affinity (CPU Affinity)
